@@ -1,4 +1,4 @@
-export default function Namespaces ({ items, onSelect, selectedItem }) {
+export default function Namespaces ({ items = [], onSelect, selectedItem }) {
   return (
     <div>
       <div className='label'>Namespaces</div>
@@ -6,9 +6,9 @@ export default function Namespaces ({ items, onSelect, selectedItem }) {
         <option key='_all' value='_all'>
           all
         </option>
-        {items.items.map(ns => (
-          <option key={ns.metadata.uuid} value={ns.metadata.name}>
-            {ns.metadata.name}
+        {items.map(ns => (
+          <option key={ns.uid} value={ns.name}>
+            {ns.name}
           </option>
         ))}
       </select>
